@@ -1,48 +1,118 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+    <!-- Define o tipo de documento como HTML5 e o idioma como português do Brasil -->
 
 <head>
     <meta charset="UTF-8">
+    <!-- Define a codificação de caracteres como UTF-8, que suporta todos os caracteres internacionais -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ajusta o layout da página para diferentes tamanhos de tela, garantindo que seja responsivo -->
+
     <title>InvestiSmart</title>
+    <!-- Define o título da página que aparecerá na aba do navegador -->
+
     <link rel="shortcut icon" href="./img/logo.svg" type="image/x-icon">
+    <!-- Adiciona um ícone (favicon) à aba do navegador, localizado no diretório img com o nome logo.svg -->
+
     <link rel="stylesheet" href="./css/style.css">
+    <!-- Inclui o arquivo de estilo CSS externo (style.css) para estilizar a página -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <!-- Importa a biblioteca de ícones Font Awesome para usar ícones personalizados na página -->
 </head>
 
 <body>
+    <!-- O conteúdo principal da página começa aqui -->
+
     <header>
+        <!-- Seção de cabeçalho da página, que geralmente contém o título e a navegação -->
         <i class="fa-solid fa-hand-holding-dollar"></i>
+        <!-- Exibe o ícone de uma mão segurando dinheiro, importado da biblioteca Font Awesome -->
         <h1>InvestiSmart</h1>
+        <!-- Exibe o título da página no cabeçalho, com o nome "InvestiSmart" -->
     </header>
 
     <main>
+        <!-- Seção principal da página que contém o conteúdo central -->
 
         <form>
+            <!-- Início do formulário para calcular o retorno do investimento -->
+
             <h2>Calcule o Retorno do Investimento</h2>
+            <!-- Título que descreve a função do formulário -->
+
             <label for="nomeDoInvestidor">Nome do Investidor</label>
-            <input type="text" id="nomeDoInvestidor" name="nomeDoInvestidor" placeholder="Nome do Investidor" required>
+            <!-- Rótulo para o campo de entrada do nome do investidor -->
+
+            <input type="text" 
+            id="nomeDoInvestidor" 
+            name="nomeDoInvestidor" 
+            placeholder="Nome do Investidor" 
+            value="WAGNER"
+            required>
+            <!-- Campo de texto para o nome do investidor, pré-preenchido com "WAGNER" e obrigatório para envio -->
+
             <label for="capitalInicial">Capital Inicial</label>
-            <input type="number" name="capitalInicial" id="capitalInicial" placeholder="Capital Inicial" min="1"
-                max="10000000" step="100" required>
+            <!-- Rótulo para o campo de entrada do valor do capital inicial -->
+
+            <input type="number" 
+            name="capitalInicial" 
+            id="capitalInicial" 
+            placeholder="Capital Inicial" 
+            value="1000"
+            min="1"
+            max="1000000"
+            step="100" 
+            required>
+            <!-- Campo numérico para o capital inicial com valor mínimo de 1, máximo de 1 milhão e incremento de 100 -->
+
             <label for="taxaDeJuros">Taxa de Juros (%) Mensal</label>
-            <input type="number" name="taxaDeJurosMensal" id="taxaDeJurosMensal" placeholder="Taxa de Juros (%) Mensal" min="0.1"
-            max="50" step="0.1" required>
+            <!-- Rótulo para o campo de entrada da taxa de juros mensal -->
+
+            <input type="number" 
+            name="taxaDeJurosMensal" 
+            id="taxaDeJurosMensal" 
+            placeholder="Taxa de Juros (%) Mensal" 
+            value="5"
+            min="0.1"
+            max="50"
+            step="0.1" 
+            required>
+            <!-- Campo numérico para a taxa de juros mensal, pré-preenchido com 5%, intervalo de 0.1 a 50, incremento de 0.1 -->
+
             <label for="numeroDePeriodos">Número de Meses</label>
-            <input type="number" name="numeroDeMeses" id="numeroDeMeses" placeholder="Número de Meses do Investimento" min="1"
-            max="50" step="1" required>
-            <button>Calcular o Montante</button>
+            <!-- Rótulo para o campo de entrada do número de meses do investimento -->
+
+            <input type="number" 
+            name="numeroDeMeses" 
+            id="numeroDeMeses" 
+            placeholder="Número de Meses do Investimento" 
+            value="12"
+            min="1"
+            max="50" 
+            step="1" 
+            required>
+            <!-- Campo numérico para o número de meses do investimento, pré-preenchido com 12 meses, intervalo de 1 a 50 -->
+
+            <button onclick="calcularMontante()">Calcular o Montante</button>
+            <!-- Botão que, ao ser clicado, executa a função calcularMontante para calcular o montante -->
         </form>
 
     </main>
 
     <footer>
+        <!-- Seção de rodapé da página -->
         <i class="fa-solid fa-code"></i>
+        <!-- Exibe um ícone de código da biblioteca Font Awesome -->
         <p>Desenvolvido por Wagner Luiz Fernandes &reg;</p>
+        <!-- Texto de rodapé informando o desenvolvedor da página, com o símbolo de marca registrada -->
     </footer>
+
+    <script src="./js/script.js"></script>
+    <!-- Inclui o arquivo de script JavaScript externo (script.js) para funcionalidade da página -->
 </body>
 
 </html>
